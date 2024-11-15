@@ -75,6 +75,7 @@ const loginStyle = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#fcfcfc',
+    width: '100%',
     flex: 1,
   },
 

@@ -1,12 +1,18 @@
+import {ReactNode} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 
-export default function CommonBackground() {
+type CommonBackgroundProps = {
+  children?: ReactNode;
+};
+
+export default function CommonBackground({children}: CommonBackgroundProps) {
   return (
     <View style={styles.container}>
       <Image
         source={require('../assets/images/top_gradient_bg.png')}
         style={styles.topImage}
       />
+      {children}
       <Image
         source={require('../assets/images/bottom_gradient_bg.png')}
         style={styles.bottomImage}
@@ -20,6 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     justifyContent: 'space-between',
+    position: 'relative',
   },
   topImage: {
     width: '100%',
