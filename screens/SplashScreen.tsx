@@ -1,7 +1,4 @@
-import {
-    StackActions,
-    useNavigation,
-  } from '@react-navigation/native';
+import {StackActions, useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef} from 'react';
 import {Animated, Image, StyleSheet, Text, View} from 'react-native';
 
@@ -10,25 +7,22 @@ const SplashScreen = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    
     Animated.sequence([
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 1000,
         useNativeDriver: true,
       }),
-      
+
       Animated.delay(1500),
-      
+
       Animated.timing(fadeAnim, {
         toValue: 0,
         duration: 500,
         useNativeDriver: true,
       }),
     ]).start(() => {
-      
-      navigation.navigate('Welcome');
-      navigation.dispatch(StackActions.pop(1));
+      navigation.dispatch(StackActions.replace('Welcome'));
     });
 
     return () => fadeAnim.setValue(0);
