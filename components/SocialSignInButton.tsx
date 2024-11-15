@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   image: {
     marginRight: 10,
     position: 'absolute',
-    marginStart: 35
+    marginStart: 35,
   },
 
   text: {

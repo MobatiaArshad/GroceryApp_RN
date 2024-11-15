@@ -12,7 +12,7 @@ export default function CommonBackground({children}: CommonBackgroundProps) {
         source={require('../assets/images/top_gradient_bg.png')}
         style={styles.topImage}
       />
-      {children}
+      <View style={styles.contentContainer}>{children}</View>
       <Image
         source={require('../assets/images/bottom_gradient_bg.png')}
         style={styles.bottomImage}
@@ -37,7 +37,10 @@ const styles = StyleSheet.create({
   bottomImage: {
     width: '100%',
     resizeMode: 'cover',
-    position: 'absolute',
+    position: 'static',
     bottom: 0,
+  },
+  contentContainer: {
+    position: 'relative',
   },
 });

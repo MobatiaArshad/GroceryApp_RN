@@ -15,8 +15,14 @@ export default function AuthScreen() {
   const {name, flag, dialCode} = getCountryByCode(countryCode); // Get country details
 
   return (
-    <View style={loginStyle.mainContainer}>
-      <Image source={require('../assets/images/login_veg_ico.png')} />
+    <View style={loginStyle.container}>
+      <View style={loginStyle.mainContainer}>
+        <Image
+          source={require('../assets/images/login_veg_ico.png')}
+          style={{position: 'relative', top: 0}}
+        />
+      </View>
+
       <View style={loginStyle.secondContainer}>
         <Text style={loginStyle.mainSemiBold}>
           Get your groceries{'\n'}with nector
@@ -43,20 +49,21 @@ export default function AuthScreen() {
           Or connect with social media
         </Text>
 
-        <View style={loginStyle.socialContainer}></View>
-        <SocialButton
-          imageSource={require('../assets/images/google_ico.png')}
-          text="Continue with Google"
-          color="#5383EC"
-          onPress={() => navigation.navigate('LocationScreen')}
-        />
+        <View style={loginStyle.socialContainer}>
+          <SocialButton
+            imageSource={require('../assets/images/google_ico.png')}
+            text="Continue with Google"
+            color="#5383EC"
+            onPress={() => navigation.navigate('LocationScreen')}
+          />
 
-        <SocialButton
-          imageSource={require('../assets/images/fb_ico.png')}
-          text="Continue with Facebook"
-          color="#4A66AC"
-          onPress={() => navigation.navigate('LocationScreen')}
-        />
+          <SocialButton
+            imageSource={require('../assets/images/fb_ico.png')}
+            text="Continue with Facebook"
+            color="#4A66AC"
+            onPress={() => navigation.navigate('LocationScreen')}
+          />
+        </View>
       </View>
     </View>
   );
@@ -71,20 +78,30 @@ const loginStyle = StyleSheet.create({
     bottom: 0,
   },
 
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'space-between',
+    position: 'relative',
+  },
+
   mainContainer: {
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#fcfcfc',
     width: '100%',
     flex: 1,
+    position: 'relative',
   },
 
   secondContainer: {
-    padding: 24,
+    paddingHorizontal: 24,
     alignItems: 'flex-start',
     flexDirection: 'column',
     flex: 1,
     width: '100%',
+    position: 'absolute',
+    bottom: 0,
   },
 
   mainSemiBold: {
@@ -121,7 +138,7 @@ const loginStyle = StyleSheet.create({
   },
 
   socialContainer: {
-    marginTop: 10,
-    marginBottom: 30,
+    marginTop: 37,
+    marginBottom: 40,
   },
 });

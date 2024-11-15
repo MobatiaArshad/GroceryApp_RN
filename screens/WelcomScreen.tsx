@@ -22,6 +22,7 @@ const WelcomeScreen = () => {
         <CustomButton
           title="Get Started"
           onPress={() => navigation.navigate('Auth')}
+          editStyle={welcomStyle.customButtonStyle}
         />
       </View>
     </View>
@@ -62,7 +63,7 @@ const welcomStyle = StyleSheet.create({
   },
 
   mainText: {
-    fontFamily: 'GilroyBold',
+    fontFamily: 'Gilroy-Bold',
     fontSize: 48,
     color: 'white',
     textAlign: 'center',
@@ -70,7 +71,7 @@ const welcomStyle = StyleSheet.create({
   },
 
   lightText: {
-    fontFamily: 'GilroyLight',
+    fontFamily: 'Gilroy-Light',
     fontSize: 16,
     color: 'white',
     textAlign: 'center',
@@ -78,7 +79,7 @@ const welcomStyle = StyleSheet.create({
   },
 
   regularText: {
-    fontFamily: 'GilroyRegular',
+    fontFamily: 'Gilroy-Regular',
     fontSize: 16,
     color: 'white',
     textAlign: 'center',
@@ -89,5 +90,19 @@ const welcomStyle = StyleSheet.create({
     width: 353,
     height: 67,
     borderRadius: 19,
+  },
+
+  customButtonStyle: {
+    backgroundColor: '#53B175',
+    padding: 20,
+    marginStart: 20,
+    marginLeft: 20,
+    marginTop: 40,
+    marginBottom: 90,
+    width: '80%',
+    height: 67,
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
