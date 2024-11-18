@@ -96,7 +96,10 @@ export default function LocationScreen() {
 
               <CustomButton
                 title={'Submit'}
-                onPress={console.log(selectedArea + selectedZone)}
+                onPress={
+                  // console.log(selectedArea + selectedZone)
+                  () => navigation.navigate('MainTabs')
+                }
                 editStyle={styles.customButtonStyle}
               />
             </View>
