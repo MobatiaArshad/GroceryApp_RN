@@ -22,14 +22,9 @@ import CartScreen from './screens/CartScreen';
 import FavoriteScreen from './screens/FavoritesScreen';
 import AccountScreen from './screens/AccountScreen';
 
-// Create Navigator Instances
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/**
- * Function to render tab icons dynamically.
- * This reduces duplication in the tabBarIcon logic.
- */
 const renderTabIcon = (routeName: string, color: string) => {
   const iconSize = 24;
 
@@ -49,13 +44,10 @@ const renderTabIcon = (routeName: string, color: string) => {
   }
 };
 
-/**
- * Bottom Tab Navigator Component
- */
 const BottomTabs = () => (
   <Tab.Navigator
     screenOptions={({route}) => ({
-      headerShown: false, // Hide headers for all tabs
+      headerShown: false,
       tabBarActiveTintColor: '#53B175',
       tabBarInactiveTintColor: '#181725',
       tabBarStyle: {
@@ -72,9 +64,6 @@ const BottomTabs = () => (
   </Tab.Navigator>
 );
 
-/**
- * Main App Component with Stack Navigator
- */
 const App = () => {
   return (
     <PaperProvider>
